@@ -37,7 +37,7 @@ class ChattyRouterDelegate extends RouterDelegate<RouterState>
   @override
   Future<void> setNewRoutePath(RouterState configuration) {
     _routerStore.setNewRoutePath(configuration);
-    return SynchronousFuture(null);
+    return SynchronousFuture<void>(null);
   }
 
   @override

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class ChattyRouterInformationParser extends RouteInformationParser<RouterState> {
   @override
   Future<RouterState> parseRouteInformation(RouteInformation routeInformation) async {
-    final uri = Uri.parse(routeInformation.location ?? '');
+    final Uri uri = Uri.parse(routeInformation.location ?? '');
 
-    final path = uri.path;
+    final String path = uri.path;
 
     switch (path) {
       case '/':

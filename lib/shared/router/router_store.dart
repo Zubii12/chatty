@@ -14,10 +14,10 @@ abstract class _RouterStore with Store {
 
   @computed
   List<Page<dynamic>> get pages {
-    return [
+    return <Page<dynamic>>[
       const _NoAnimationPage(
         child: HomePage(),
-        key: ValueKey('home-page'),
+        key: ValueKey<String>('home-page'),
       ),
     ];
   }
@@ -29,8 +29,9 @@ abstract class _RouterStore with Store {
   void setNewRoutePath(RouterState newState) => _routerState = newState;
 
   @action
-  bool handleOnPop(Route route, dynamic result) {
-    final success = route.didPop(result);
+  bool handleOnPop(Route<dynamic> route, dynamic result) {
+    final bool success = route.didPop(result);
+
     if (success) {
       _routerState = const RouterState.home();
     }

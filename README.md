@@ -6,7 +6,7 @@ A new Chat app project.
 * [x] create mobx structure
 * [x] create router store
 * [ ] add theme data config, color pallete
-* [ ] add analysis option
+* [x] add analysis options
 * [ ] connect to hasura database
 * [ ] make the models and the tabels in database
 
