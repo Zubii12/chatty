@@ -4,13 +4,11 @@ A new Chat app project.
 ## Setup project:
 
 * [x] create mobx structure
-* [ ] connect to hasura database
-* [ ] make the models and the tabels in database
-
-## Config flutter project
-
+* [x] create router store
 * [ ] add theme data config, color pallete
 * [ ] add analysis option
+* [ ] connect to hasura database
+* [ ] make the models and the tabels in database
 
 ## Splash screen
 * [ ] add splash screen
