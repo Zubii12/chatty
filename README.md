@@ -3,7 +3,7 @@
 A new Chat app project.
 ## Setup project:
 
-* [ ] create mobx structure
+* [x] create mobx structure
 * [ ] connect to hasura database
 * [ ] make the models and the tabels in database
 
