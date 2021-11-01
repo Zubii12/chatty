@@ -7,7 +7,7 @@ A new Chat app project.
 * [x] create router store
 * [x] add theme data config, color palette
 * [x] add analysis options
-* [ ] connect to hasura database
+* [x] config the hasura database
 * [ ] make the models and the tabels in database
 
 ## Splash screen
