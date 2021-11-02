@@ -11,7 +11,7 @@ A new Chat app project.
 * [x] make the models and the tabels in database
 
 ## Splash screen
-* [ ] add splash screen
+* [*] add splash screen + make logic for auth store
 
 ## Auth
 

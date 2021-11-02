@@ -34,8 +34,28 @@ ThemeData get appTheme {
       elevation: 0,
       backgroundColor: Palette.white,
     ),
-    buttonTheme: const ButtonThemeData(
-      buttonColor: Palette.defaultBlue,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        textStyle: MaterialStateProperty.all(
+          const TextStyle(color: Palette.offWhite),
+        ),
+        backgroundColor: MaterialStateProperty.all(Palette.defaultBlue),
+      ),
+    ),
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(color: Palette.activeBlack),
+      bodyText2: TextStyle(color: Palette.activeBlack),
+      button: TextStyle(color: Palette.activeBlack),
+      caption: TextStyle(color: Palette.activeBlack),
+      headline1: TextStyle(color: Palette.activeBlack),
+      headline2: TextStyle(color: Palette.activeBlack),
+      headline3: TextStyle(color: Palette.activeBlack),
+      headline4: TextStyle(color: Palette.activeBlack),
+      headline5: TextStyle(color: Palette.activeBlack),
+      headline6: TextStyle(color: Palette.activeBlack),
+      overline: TextStyle(color: Palette.activeBlack),
+      subtitle1: TextStyle(color: Palette.activeBlack),
+      subtitle2: TextStyle(color: Palette.activeBlack),
     ),
   );
 }
@@ -47,8 +67,28 @@ ThemeData get appThemeDark {
       elevation: 0,
       backgroundColor: Palette.activeBlack,
     ),
-    buttonTheme: const ButtonThemeData(
-      buttonColor: Palette.darkModeBlue,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        textStyle: MaterialStateProperty.all(
+          const TextStyle(color: Palette.offWhite),
+        ),
+        backgroundColor: MaterialStateProperty.all(Palette.darkModeBlue),
+      ),
+    ),
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(color: Palette.offWhite),
+      bodyText2: TextStyle(color: Palette.offWhite),
+      button: TextStyle(color: Palette.offWhite),
+      caption: TextStyle(color: Palette.offWhite),
+      headline1: TextStyle(color: Palette.offWhite),
+      headline2: TextStyle(color: Palette.offWhite),
+      headline3: TextStyle(color: Palette.offWhite),
+      headline4: TextStyle(color: Palette.offWhite),
+      headline5: TextStyle(color: Palette.offWhite),
+      headline6: TextStyle(color: Palette.offWhite),
+      overline: TextStyle(color: Palette.offWhite),
+      subtitle1: TextStyle(color: Palette.offWhite),
+      subtitle2: TextStyle(color: Palette.offWhite),
     ),
   );
 }

@@ -10,5 +10,5 @@ class Message with _$Message {
     required DateTime createdAt,
   }) = _Message;
 
-  factory Message.fromJson(dynamic json) => _$MessageFromJson(json);
+  factory Message.fromJson(Map<String, dynamic> json) => _$MessageFromJson(json);
 }

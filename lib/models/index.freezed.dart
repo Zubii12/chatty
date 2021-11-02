@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of models;
 
@@ -20,6 +21,14 @@ class _$RouterStateTearOff {
     return const Unknown();
   }
 
+  Splash splash() {
+    return const Splash();
+  }
+
+  Login login() {
+    return const Login();
+  }
+
   Home home() {
     return const Home();
   }
@@ -33,12 +42,24 @@ mixin _$RouterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unknown,
+    required TResult Function() splash,
+    required TResult Function() login,
     required TResult Function() home,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
+    TResult Function()? home,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
     TResult Function()? home,
     required TResult orElse(),
   }) =>
@@ -46,12 +67,24 @@ mixin _$RouterState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Unknown value) unknown,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Login value) login,
     required TResult Function(Home value) home,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
+    TResult Function(Home value)? home,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) =>
@@ -91,6 +124,7 @@ class _$UnknownCopyWithImpl<$Res> extends _$RouterStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$Unknown extends Unknown {
   const _$Unknown() : super._();
 
@@ -111,6 +145,8 @@ class _$Unknown extends Unknown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unknown,
+    required TResult Function() splash,
+    required TResult Function() login,
     required TResult Function() home,
   }) {
     return unknown();
@@ -118,8 +154,21 @@ class _$Unknown extends Unknown {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
+    TResult Function()? home,
+  }) {
+    return unknown?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -133,6 +182,8 @@ class _$Unknown extends Unknown {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Unknown value) unknown,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Login value) login,
     required TResult Function(Home value) home,
   }) {
     return unknown(this);
@@ -140,8 +191,21 @@ class _$Unknown extends Unknown {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
+    TResult Function(Home value)? home,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -155,6 +219,234 @@ class _$Unknown extends Unknown {
 abstract class Unknown extends RouterState {
   const factory Unknown() = _$Unknown;
   const Unknown._() : super._();
+}
+
+/// @nodoc
+abstract class $SplashCopyWith<$Res> {
+  factory $SplashCopyWith(Splash value, $Res Function(Splash) then) =
+      _$SplashCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SplashCopyWithImpl<$Res> extends _$RouterStateCopyWithImpl<$Res>
+    implements $SplashCopyWith<$Res> {
+  _$SplashCopyWithImpl(Splash _value, $Res Function(Splash) _then)
+      : super(_value, (v) => _then(v as Splash));
+
+  @override
+  Splash get _value => super._value as Splash;
+}
+
+/// @nodoc
+
+class _$Splash extends Splash {
+  const _$Splash() : super._();
+
+  @override
+  String toString() {
+    return 'RouterState.splash()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is Splash);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unknown,
+    required TResult Function() splash,
+    required TResult Function() login,
+    required TResult Function() home,
+  }) {
+    return splash();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
+    TResult Function()? home,
+  }) {
+    return splash?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
+    TResult Function()? home,
+    required TResult orElse(),
+  }) {
+    if (splash != null) {
+      return splash();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unknown value) unknown,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Login value) login,
+    required TResult Function(Home value) home,
+  }) {
+    return splash(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
+    TResult Function(Home value)? home,
+  }) {
+    return splash?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
+    TResult Function(Home value)? home,
+    required TResult orElse(),
+  }) {
+    if (splash != null) {
+      return splash(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Splash extends RouterState {
+  const factory Splash() = _$Splash;
+  const Splash._() : super._();
+}
+
+/// @nodoc
+abstract class $LoginCopyWith<$Res> {
+  factory $LoginCopyWith(Login value, $Res Function(Login) then) =
+      _$LoginCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LoginCopyWithImpl<$Res> extends _$RouterStateCopyWithImpl<$Res>
+    implements $LoginCopyWith<$Res> {
+  _$LoginCopyWithImpl(Login _value, $Res Function(Login) _then)
+      : super(_value, (v) => _then(v as Login));
+
+  @override
+  Login get _value => super._value as Login;
+}
+
+/// @nodoc
+
+class _$Login extends Login {
+  const _$Login() : super._();
+
+  @override
+  String toString() {
+    return 'RouterState.login()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is Login);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unknown,
+    required TResult Function() splash,
+    required TResult Function() login,
+    required TResult Function() home,
+  }) {
+    return login();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
+    TResult Function()? home,
+  }) {
+    return login?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
+    TResult Function()? home,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unknown value) unknown,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Login value) login,
+    required TResult Function(Home value) home,
+  }) {
+    return login(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
+    TResult Function(Home value)? home,
+  }) {
+    return login?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
+    TResult Function(Home value)? home,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Login extends RouterState {
+  const factory Login() = _$Login;
+  const Login._() : super._();
 }
 
 /// @nodoc
@@ -174,6 +466,7 @@ class _$HomeCopyWithImpl<$Res> extends _$RouterStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$Home extends Home {
   const _$Home() : super._();
 
@@ -194,6 +487,8 @@ class _$Home extends Home {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unknown,
+    required TResult Function() splash,
+    required TResult Function() login,
     required TResult Function() home,
   }) {
     return home();
@@ -201,8 +496,21 @@ class _$Home extends Home {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
+    TResult Function()? home,
+  }) {
+    return home?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? login,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -216,6 +524,8 @@ class _$Home extends Home {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Unknown value) unknown,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Login value) login,
     required TResult Function(Home value) home,
   }) {
     return home(this);
@@ -223,8 +533,21 @@ class _$Home extends Home {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
+    TResult Function(Home value)? home,
+  }) {
+    return home?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Login value)? login,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -437,9 +760,8 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_User implements _User {
   _$_User(
       {required this.id,
@@ -451,8 +773,7 @@ class _$_User implements _User {
       required this.lastSeen,
       required this.lastTyped});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserFromJson(json);
+  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
   @override
   final int id;
@@ -520,7 +841,7 @@ class _$_User implements _User {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UserToJson(this);
+    return _$$_UserToJson(this);
   }
 }
 
@@ -689,9 +1010,8 @@ class __$RoomCopyWithImpl<$Res> extends _$RoomCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Room implements _Room {
   _$_Room(
       {required this.id,
@@ -699,8 +1019,7 @@ class _$_Room implements _Room {
       required this.unreadMessages,
       required this.roomType});
 
-  factory _$_Room.fromJson(Map<String, dynamic> json) =>
-      _$_$_RoomFromJson(json);
+  factory _$_Room.fromJson(Map<String, dynamic> json) => _$$_RoomFromJson(json);
 
   @override
   final int id;
@@ -748,7 +1067,7 @@ class _$_Room implements _Room {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RoomToJson(this);
+    return _$$_RoomToJson(this);
   }
 }
 
@@ -926,9 +1245,8 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Message implements _Message {
   _$_Message(
       {required this.id,
@@ -938,7 +1256,7 @@ class _$_Message implements _Message {
       required this.createdAt});
 
   factory _$_Message.fromJson(Map<String, dynamic> json) =>
-      _$_$_MessageFromJson(json);
+      _$$_MessageFromJson(json);
 
   @override
   final int id;
@@ -991,7 +1309,7 @@ class _$_Message implements _Message {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MessageToJson(this);
+    return _$$_MessageToJson(this);
   }
 }
 
@@ -1135,14 +1453,13 @@ class __$StoryCopyWithImpl<$Res> extends _$StoryCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Story implements _Story {
   _$_Story({required this.id, required this.media, required this.createdAt});
 
   factory _$_Story.fromJson(Map<String, dynamic> json) =>
-      _$_$_StoryFromJson(json);
+      _$$_StoryFromJson(json);
 
   @override
   final int id;
@@ -1183,7 +1500,7 @@ class _$_Story implements _Story {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_StoryToJson(this);
+    return _$$_StoryToJson(this);
   }
 }
 
@@ -1204,4 +1521,197 @@ abstract class _Story implements Story {
   @override
   @JsonKey(ignore: true)
   _$StoryCopyWith<_Story> get copyWith => throw _privateConstructorUsedError;
+}
+
+AuthData _$AuthDataFromJson(Map<String, dynamic> json) {
+  return _AuthData.fromJson(json);
+}
+
+/// @nodoc
+class _$AuthDataTearOff {
+  const _$AuthDataTearOff();
+
+  _AuthData call(
+      {required String accessToken,
+      required String refreshToken,
+      required int accountId}) {
+    return _AuthData(
+      accessToken: accessToken,
+      refreshToken: refreshToken,
+      accountId: accountId,
+    );
+  }
+
+  AuthData fromJson(Map<String, Object> json) {
+    return AuthData.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $AuthData = _$AuthDataTearOff();
+
+/// @nodoc
+mixin _$AuthData {
+  String get accessToken => throw _privateConstructorUsedError;
+  String get refreshToken => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AuthDataCopyWith<AuthData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AuthDataCopyWith<$Res> {
+  factory $AuthDataCopyWith(AuthData value, $Res Function(AuthData) then) =
+      _$AuthDataCopyWithImpl<$Res>;
+  $Res call({String accessToken, String refreshToken, int accountId});
+}
+
+/// @nodoc
+class _$AuthDataCopyWithImpl<$Res> implements $AuthDataCopyWith<$Res> {
+  _$AuthDataCopyWithImpl(this._value, this._then);
+
+  final AuthData _value;
+  // ignore: unused_field
+  final $Res Function(AuthData) _then;
+
+  @override
+  $Res call({
+    Object? accessToken = freezed,
+    Object? refreshToken = freezed,
+    Object? accountId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      accessToken: accessToken == freezed
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      refreshToken: refreshToken == freezed
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$AuthDataCopyWith<$Res> implements $AuthDataCopyWith<$Res> {
+  factory _$AuthDataCopyWith(_AuthData value, $Res Function(_AuthData) then) =
+      __$AuthDataCopyWithImpl<$Res>;
+  @override
+  $Res call({String accessToken, String refreshToken, int accountId});
+}
+
+/// @nodoc
+class __$AuthDataCopyWithImpl<$Res> extends _$AuthDataCopyWithImpl<$Res>
+    implements _$AuthDataCopyWith<$Res> {
+  __$AuthDataCopyWithImpl(_AuthData _value, $Res Function(_AuthData) _then)
+      : super(_value, (v) => _then(v as _AuthData));
+
+  @override
+  _AuthData get _value => super._value as _AuthData;
+
+  @override
+  $Res call({
+    Object? accessToken = freezed,
+    Object? refreshToken = freezed,
+    Object? accountId = freezed,
+  }) {
+    return _then(_AuthData(
+      accessToken: accessToken == freezed
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      refreshToken: refreshToken == freezed
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AuthData implements _AuthData {
+  _$_AuthData(
+      {required this.accessToken,
+      required this.refreshToken,
+      required this.accountId});
+
+  factory _$_AuthData.fromJson(Map<String, dynamic> json) =>
+      _$$_AuthDataFromJson(json);
+
+  @override
+  final String accessToken;
+  @override
+  final String refreshToken;
+  @override
+  final int accountId;
+
+  @override
+  String toString() {
+    return 'AuthData(accessToken: $accessToken, refreshToken: $refreshToken, accountId: $accountId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AuthData &&
+            (identical(other.accessToken, accessToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.accessToken, accessToken)) &&
+            (identical(other.refreshToken, refreshToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.refreshToken, refreshToken)) &&
+            (identical(other.accountId, accountId) ||
+                const DeepCollectionEquality()
+                    .equals(other.accountId, accountId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(accessToken) ^
+      const DeepCollectionEquality().hash(refreshToken) ^
+      const DeepCollectionEquality().hash(accountId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AuthDataCopyWith<_AuthData> get copyWith =>
+      __$AuthDataCopyWithImpl<_AuthData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AuthDataToJson(this);
+  }
+}
+
+abstract class _AuthData implements AuthData {
+  factory _AuthData(
+      {required String accessToken,
+      required String refreshToken,
+      required int accountId}) = _$_AuthData;
+
+  factory _AuthData.fromJson(Map<String, dynamic> json) = _$_AuthData.fromJson;
+
+  @override
+  String get accessToken => throw _privateConstructorUsedError;
+  @override
+  String get refreshToken => throw _privateConstructorUsedError;
+  @override
+  int get accountId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$AuthDataCopyWith<_AuthData> get copyWith =>
+      throw _privateConstructorUsedError;
 }

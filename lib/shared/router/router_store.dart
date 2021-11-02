@@ -1,39 +1,90 @@
 import 'package:chatty/models/index.dart';
 import 'package:chatty/screens/home_page/home_page.dart';
+import 'package:chatty/screens/login_page/login_page.dart';
+import 'package:chatty/screens/static_pages/splash_page.dart';
+import 'package:chatty/screens/static_pages/unknown_page.dart';
+import 'package:chatty/shared/state/index.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
 part 'router_store.g.dart';
 
 class RouterStore extends _RouterStore with _$RouterStore {
-  RouterStore() : super();
+  RouterStore({required AuthStore authStore}) : super(authStore: authStore);
 }
 
 abstract class _RouterStore with Store {
-  _RouterStore();
+  _RouterStore({required AuthStore authStore}) : _authStore = authStore {
+    reaction<AuthState>((_) => _authStore.authState, (AuthState authState) {
+      if (authState == AuthState.authenticated) {
+        // Check if any route needs to be restored after login
+        if (_restoreRoute != null) {
+          setNewRoutePath(_restoreRoute!);
+          _restoreRoute = null;
+        } else {
+          _routerState = const RouterState.home();
+        }
+      }
+
+      if (authState == AuthState.unauthenticated) {
+        _routerState = const RouterState.login();
+      }
+    });
+  }
+
+  final AuthStore _authStore;
+
+  RouterState? _restoreRoute;
 
   @computed
-  List<Page<dynamic>> get pages {
-    return <Page<dynamic>>[
-      const _NoAnimationPage(
-        child: HomePage(),
-        key: ValueKey<String>('home-page'),
-      ),
-    ];
-  }
+  List<Page<dynamic>> get pages => <Page<dynamic>>[
+        // Unauthorized stack
+        if (_authStore.authState == AuthState.unauthenticated) ...<Page<dynamic>>[
+          if (_routerState is Login)
+            const _NoAnimationPage(child: LoginPage(), key: ValueKey<String>('login-page')),
+        ],
+
+        // Authorized stack
+        if (_authStore.authState == AuthState.authenticated) ...<Page<dynamic>>[
+          if (_routerState is Home)
+            const _NoAnimationPage(child: HomePage(), key: ValueKey<String>('home-page')),
+        ],
+
+        // Exceptional stack
+        if (_routerState is Unknown)
+          const _NoAnimationPage(child: UnknownPage(), key: ValueKey<String>('unknown-page')),
+        if (_authStore.authState == AuthState.unknown)
+          const _NoAnimationPage(child: SplashPage(), key: ValueKey<String>('splash-page'))
+      ];
 
   @readonly
   RouterState _routerState = const RouterState.unknown();
 
   @action
-  void setNewRoutePath(RouterState newState) => _routerState = newState;
+  void setNewRoutePath(RouterState newState) {
+    if (_authStore.authState == AuthState.unauthenticated) {
+      _restoreRoute = newState;
+
+      _routerState = const RouterState.login();
+    } else {
+      _routerState = newState;
+    }
+  }
 
   @action
   bool handleOnPop(Route<dynamic> route, dynamic result) {
     final bool success = route.didPop(result);
 
     if (success) {
-      _routerState = const RouterState.home();
+      if (_authStore.authState == AuthState.authenticated) {
+        _routerState = const RouterState.home();
+      }
+      if (_authStore.authState == AuthState.unauthenticated) {
+        _routerState = const RouterState.login();
+      }
+      if (_authStore.authState == AuthState.unknown) {
+        _routerState = const RouterState.unknown();
+      }
     }
     return success;
   }

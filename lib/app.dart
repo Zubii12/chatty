@@ -27,7 +27,6 @@ class ChattyApp extends HookWidget {
     return MaterialApp.router(
       theme: appTheme,
       darkTheme: appThemeDark,
-      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (BuildContext context) => 'Chatty',
       routerDelegate: routerDelegate,

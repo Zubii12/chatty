@@ -25,6 +25,9 @@ mixin _$RouterStore on _RouterStore, Store {
   }
 
   @override
+  RouterState get _routerState => routerState;
+
+  @override
   set _routerState(RouterState value) {
     _$_routerStateAtom.reportWrite(value, super._routerState, () {
       super._routerState = value;

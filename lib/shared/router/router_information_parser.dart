@@ -12,6 +12,8 @@ class ChattyRouterInformationParser extends RouteInformationParser<RouterState> 
     switch (path) {
       case '/':
         return const RouterState.home();
+      case '/splash':
+        return const RouterState.splash();
       default:
         return const RouterState.unknown();
     }
@@ -20,8 +22,19 @@ class ChattyRouterInformationParser extends RouteInformationParser<RouterState> 
   @override
   RouteInformation? restoreRouteInformation(RouterState configuration) {
     if (configuration is Home) {
-      setWebPageTitle('Chatty');
+      setWebPageTitle('Chatty | Home');
       return const RouteInformation(location: '/users');
+    } else if (configuration is Login) {
+      setWebPageTitle('Chatty | Login');
+      return const RouteInformation(location: '/login');
+    } else if (configuration is Splash) {
+      setWebPageTitle('Chatty');
+      return const RouteInformation(location: '/');
+    } else if (configuration is Unknown) {
+      setWebPageTitle('Unknown | Labouroo');
+      return const RouteInformation(location: '/unknown');
     }
+
+    throw Exception('Unknown configuration');
   }
 }

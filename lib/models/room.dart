@@ -11,5 +11,5 @@ class Room with _$Room {
     required RoomType roomType,
   }) = _Room;
 
-  factory Room.fromJson(dynamic json) => _$RoomFromJson(json);
+  factory Room.fromJson(Map<String, dynamic> json) => _$RoomFromJson(json);
 }

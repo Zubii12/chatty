@@ -8,5 +8,5 @@ class Story with _$Story {
     required DateTime createdAt,
   }) = _Story;
 
-  factory Story.fromJson(dynamic json) => _$StoryFromJson(json);
+  factory Story.fromJson(Map<String, dynamic> json) => _$StoryFromJson(json);
 }

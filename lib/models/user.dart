@@ -13,5 +13,5 @@ class User with _$User {
     required DateTime lastTyped,
   }) = _User;
 
-  factory User.fromJson(dynamic json) => _$UserFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
