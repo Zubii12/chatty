@@ -8,7 +8,7 @@ A new Chat app project.
 * [x] add theme data config, color palette
 * [x] add analysis options
 * [x] config the hasura database
-* [ ] make the models and the tabels in database
+* [x] make the models and the tabels in database
 
 ## Splash screen
 * [ ] add splash screen
