@@ -1,0 +1,24 @@
+# gcloud meta list-files-for-upload
+
+!include:.gitignore
+.gcloudignore
+
+.git
+.gitignore
+
+*.iml
+.eslintrc.js
+tsconfig.json
+deploy_service.sh
+deploy_gateway.sh
+gcloud_build_image
+.DS_Store
+README.md
+api_config.yaml
+
+/protos
+/test
+/testRes
+
+# explicitly include the dist and node_modules folder
+/src

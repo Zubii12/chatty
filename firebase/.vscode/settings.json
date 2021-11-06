@@ -1,0 +1,5 @@
+{
+    "typescript.format.insertSpaceAfterConstructor": true,
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.implementationsCodeLens.enabled": true
+}

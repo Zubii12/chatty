@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "chatty-6f540",
+    "chatty": "chatty-6f540"
+  },
+  "targets": {}
+}
