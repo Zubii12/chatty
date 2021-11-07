@@ -13,15 +13,15 @@ A new Chat app project.
 
 ## Splash screen
 
-- [*] add splash screen + make logic for auth store
+- [x] add splash screen + make logic for auth store
 
 ## Auth
 
 - [x] create register page design
 - [x] save phone number to shared preferences
 - [x] after the user has registered once, he will be always logged in,
-- [*] phone number register method
-- [*] verify phone number with OTP (server - client)
+- [x] phone number register method
+- [x] verify phone number with OTP (server - client)
 
 ## Profile account config
 
