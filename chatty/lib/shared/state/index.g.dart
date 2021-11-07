@@ -68,37 +68,65 @@ mixin _$AuthStore on _AuthStore, Store {
     });
   }
 
-  final _$_loginStateAtom = Atom(name: '_AuthStore._loginState');
+  final _$_sendOTPStateAtom = Atom(name: '_AuthStore._sendOTPState');
 
-  StateModel<void> get loginState {
-    _$_loginStateAtom.reportRead();
-    return super._loginState;
+  StateModel<String> get sendOTPState {
+    _$_sendOTPStateAtom.reportRead();
+    return super._sendOTPState;
   }
 
   @override
-  StateModel<void> get _loginState => loginState;
+  StateModel<String> get _sendOTPState => sendOTPState;
 
   @override
-  set _loginState(StateModel<void> value) {
-    _$_loginStateAtom.reportWrite(value, super._loginState, () {
-      super._loginState = value;
+  set _sendOTPState(StateModel<String> value) {
+    _$_sendOTPStateAtom.reportWrite(value, super._sendOTPState, () {
+      super._sendOTPState = value;
     });
   }
 
-  final _$_authenticateWithStoredTokenAsyncAction =
-      AsyncAction('_AuthStore._authenticateWithStoredToken');
+  final _$_verifyOTPStateAtom = Atom(name: '_AuthStore._verifyOTPState');
 
-  @override
-  Future<void> _authenticateWithStoredToken() {
-    return _$_authenticateWithStoredTokenAsyncAction
-        .run(() => super._authenticateWithStoredToken());
+  StateModel<void> get verifyOTPState {
+    _$_verifyOTPStateAtom.reportRead();
+    return super._verifyOTPState;
   }
 
-  final _$loginAsyncAction = AsyncAction('_AuthStore.login');
+  @override
+  StateModel<void> get _verifyOTPState => verifyOTPState;
 
   @override
-  Future<void> login({required String phone}) {
-    return _$loginAsyncAction.run(() => super.login(phone: phone));
+  set _verifyOTPState(StateModel<void> value) {
+    _$_verifyOTPStateAtom.reportWrite(value, super._verifyOTPState, () {
+      super._verifyOTPState = value;
+    });
+  }
+
+  final _$_loginWithStoredPhoneAsyncAction =
+      AsyncAction('_AuthStore._loginWithStoredPhone');
+
+  @override
+  Future<void> _loginWithStoredPhone() {
+    return _$_loginWithStoredPhoneAsyncAction
+        .run(() => super._loginWithStoredPhone());
+  }
+
+  final _$sendOTPAsyncAction = AsyncAction('_AuthStore.sendOTP');
+
+  @override
+  Future<void> sendOTP({required String phone}) {
+    return _$sendOTPAsyncAction.run(() => super.sendOTP(phone: phone));
+  }
+
+  final _$verifyOTPAsyncAction = AsyncAction('_AuthStore.verifyOTP');
+
+  @override
+  Future<void> verifyOTP(
+      {required String phone,
+      required String code,
+      required String requestId}) {
+    return _$verifyOTPAsyncAction.run(
+        () => super.verifyOTP(phone: phone, code: code, requestId: requestId));
   }
 
   @override

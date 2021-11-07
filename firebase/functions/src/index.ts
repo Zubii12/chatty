@@ -34,71 +34,48 @@ const graphQLClient = new GraphQLClient(hasuraConfig.graphqlHttpsEndpoint, {
   },
 });
 
-const setPhoneVerifiedMutation = gql`
-  mutation setPhoneVerifiedMutation($phone: String!) {
-    update_users(where: { phone: { _eq: $phone } }, _set: { phone_verified: true }) {
-      affected_rows
+const createUserMutation = gql`
+  mutation createUserMutation($user: users_insert_input!) {
+    insert_users_one(object: $user, on_conflict: { constraint: users_phone_key, update_columns: [phone_verified] }) {
+      id
     }
   }
 `;
-
-export const sendOTP = functions.https.onRequest((req, res) => {
-  const jsonString = JSON.stringify(req.body);
-
-  const {
-    event: { op, data },
-    table,
-  } = req.body;
-
-  console.log(`baaa ${op}`);
-  console.log(`baaa ${data}`);
-  console.log(`baaa ${data.new.phone}`);
-  console.log(`baaa ${table}`);
-
-  let phone = '';
-  JSON.parse(jsonString, (key, value) => {
-    if (key === 'phone') {
-      phone = value;
-    }
-  });
+export const sendOTP = functions.https.onCall((data) => {
+  const phone = data.phone;
 
   console.log(phone);
 
-  const vonage = new Vonage(
-    {
-      apiKey: vonageSettings.apiKey,
-      apiSecret: vonageSettings.apiSecret,
-    },
-    {
-      debug: vonageSettings.debug,
-    },
-  );
-
   if (phone.length !== 0) {
-    vonage.verify.request(
-      {
-        number: phone,
-        brand: config.projectName,
-        pin_expiry: vonageSettings.pinExpiry,
-        workflow_id: vonageSettings.workflowId,
-        code_length: vonageSettings.codeLength,
-      },
-      (error, result) => {
-        if (error) {
-          console.error(error);
-          res.status(500).send(`Send OTP - error - ${error}`);
-        } else {
-          res.status(200).send(`Sent OTP - successful - ${result}`);
-        }
-      },
-    );
+    return new Promise((resolve) => {
+      vonage.verify.request(
+        {
+          number: phone,
+          brand: config.projectName,
+          pin_expiry: vonageSettings.pinExpiry,
+          workflow_id: vonageSettings.workflowId,
+          code_length: vonageSettings.codeLength,
+        },
+        (error, result) => {
+          if (error) {
+            console.error(error);
+            throw new functions.https.HttpsError('unknown', 'Sent OTP - error', error);
+          } else {
+            const { request_id } = result;
+
+            console.log(`Sent OTP - successful - ${request_id}`);
+            resolve(request_id);
+          }
+        },
+      );
+    });
   } else {
     console.error('Send OTP - error - Phone missing');
-    res.status(500).send('Send OTP - error - Phone missing');
+    throw new functions.https.HttpsError('internal', 'Sent OTP - error - Phone missing');
   }
 });
 
-export const verifyOTP = functions.https.onCall((data) => {
+export const verifyOTP = functions.https.onCall(async (data) => {
   const code = data.code;
   const requestId = data.requestId;
   const phone = data.phone;
@@ -113,8 +90,12 @@ export const verifyOTP = functions.https.onCall((data) => {
         console.error(error);
         throw new functions.https.HttpsError('unknown', 'Verify OTP - error', error);
       } else {
-        await graphQLClient.request(setPhoneVerifiedMutation, {
-          phone: phone,
+        await graphQLClient.request(createUserMutation, {
+          user: {
+            phone: phone,
+            name: 'null',
+            phone_verified: true,
+          },
         });
         console.log(`Verify OTP - successful - ${result}`);
         vonage.verify.control({ cmd: 'cancel', request_id: requestId }, (error, result) => {

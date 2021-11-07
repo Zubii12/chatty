@@ -29,6 +29,12 @@ class _$RouterStateTearOff {
     return const Register();
   }
 
+  VerifyOTP verifyOTP({required String phone}) {
+    return VerifyOTP(
+      phone: phone,
+    );
+  }
+
   Home home() {
     return const Home();
   }
@@ -44,6 +50,7 @@ mixin _$RouterState {
     required TResult Function() unknown,
     required TResult Function() splash,
     required TResult Function() register,
+    required TResult Function(String phone) verifyOTP,
     required TResult Function() home,
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +59,7 @@ mixin _$RouterState {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +68,7 @@ mixin _$RouterState {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
     required TResult orElse(),
   }) =>
@@ -69,6 +78,7 @@ mixin _$RouterState {
     required TResult Function(Unknown value) unknown,
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
+    required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(Home value) home,
   }) =>
       throw _privateConstructorUsedError;
@@ -77,6 +87,7 @@ mixin _$RouterState {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
   }) =>
       throw _privateConstructorUsedError;
@@ -85,6 +96,7 @@ mixin _$RouterState {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) =>
@@ -147,6 +159,7 @@ class _$Unknown extends Unknown {
     required TResult Function() unknown,
     required TResult Function() splash,
     required TResult Function() register,
+    required TResult Function(String phone) verifyOTP,
     required TResult Function() home,
   }) {
     return unknown();
@@ -158,6 +171,7 @@ class _$Unknown extends Unknown {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
   }) {
     return unknown?.call();
@@ -169,6 +183,7 @@ class _$Unknown extends Unknown {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -184,6 +199,7 @@ class _$Unknown extends Unknown {
     required TResult Function(Unknown value) unknown,
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
+    required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(Home value) home,
   }) {
     return unknown(this);
@@ -195,6 +211,7 @@ class _$Unknown extends Unknown {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
   }) {
     return unknown?.call(this);
@@ -206,6 +223,7 @@ class _$Unknown extends Unknown {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -261,6 +279,7 @@ class _$Splash extends Splash {
     required TResult Function() unknown,
     required TResult Function() splash,
     required TResult Function() register,
+    required TResult Function(String phone) verifyOTP,
     required TResult Function() home,
   }) {
     return splash();
@@ -272,6 +291,7 @@ class _$Splash extends Splash {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
   }) {
     return splash?.call();
@@ -283,6 +303,7 @@ class _$Splash extends Splash {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -298,6 +319,7 @@ class _$Splash extends Splash {
     required TResult Function(Unknown value) unknown,
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
+    required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(Home value) home,
   }) {
     return splash(this);
@@ -309,6 +331,7 @@ class _$Splash extends Splash {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
   }) {
     return splash?.call(this);
@@ -320,6 +343,7 @@ class _$Splash extends Splash {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -375,6 +399,7 @@ class _$Register extends Register {
     required TResult Function() unknown,
     required TResult Function() splash,
     required TResult Function() register,
+    required TResult Function(String phone) verifyOTP,
     required TResult Function() home,
   }) {
     return register();
@@ -386,6 +411,7 @@ class _$Register extends Register {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
   }) {
     return register?.call();
@@ -397,6 +423,7 @@ class _$Register extends Register {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -412,6 +439,7 @@ class _$Register extends Register {
     required TResult Function(Unknown value) unknown,
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
+    required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(Home value) home,
   }) {
     return register(this);
@@ -423,6 +451,7 @@ class _$Register extends Register {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
   }) {
     return register?.call(this);
@@ -434,6 +463,7 @@ class _$Register extends Register {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -447,6 +477,156 @@ class _$Register extends Register {
 abstract class Register extends RouterState {
   const factory Register() = _$Register;
   const Register._() : super._();
+}
+
+/// @nodoc
+abstract class $VerifyOTPCopyWith<$Res> {
+  factory $VerifyOTPCopyWith(VerifyOTP value, $Res Function(VerifyOTP) then) =
+      _$VerifyOTPCopyWithImpl<$Res>;
+  $Res call({String phone});
+}
+
+/// @nodoc
+class _$VerifyOTPCopyWithImpl<$Res> extends _$RouterStateCopyWithImpl<$Res>
+    implements $VerifyOTPCopyWith<$Res> {
+  _$VerifyOTPCopyWithImpl(VerifyOTP _value, $Res Function(VerifyOTP) _then)
+      : super(_value, (v) => _then(v as VerifyOTP));
+
+  @override
+  VerifyOTP get _value => super._value as VerifyOTP;
+
+  @override
+  $Res call({
+    Object? phone = freezed,
+  }) {
+    return _then(VerifyOTP(
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyOTP extends VerifyOTP {
+  const _$VerifyOTP({required this.phone}) : super._();
+
+  @override
+  final String phone;
+
+  @override
+  String toString() {
+    return 'RouterState.verifyOTP(phone: $phone)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is VerifyOTP &&
+            (identical(other.phone, phone) ||
+                const DeepCollectionEquality().equals(other.phone, phone)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(phone);
+
+  @JsonKey(ignore: true)
+  @override
+  $VerifyOTPCopyWith<VerifyOTP> get copyWith =>
+      _$VerifyOTPCopyWithImpl<VerifyOTP>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unknown,
+    required TResult Function() splash,
+    required TResult Function() register,
+    required TResult Function(String phone) verifyOTP,
+    required TResult Function() home,
+  }) {
+    return verifyOTP(phone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
+    TResult Function()? home,
+  }) {
+    return verifyOTP?.call(phone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
+    TResult Function()? home,
+    required TResult orElse(),
+  }) {
+    if (verifyOTP != null) {
+      return verifyOTP(phone);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unknown value) unknown,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Register value) register,
+    required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(Home value) home,
+  }) {
+    return verifyOTP(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(Home value)? home,
+  }) {
+    return verifyOTP?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(Home value)? home,
+    required TResult orElse(),
+  }) {
+    if (verifyOTP != null) {
+      return verifyOTP(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyOTP extends RouterState {
+  const factory VerifyOTP({required String phone}) = _$VerifyOTP;
+  const VerifyOTP._() : super._();
+
+  String get phone => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VerifyOTPCopyWith<VerifyOTP> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -489,6 +669,7 @@ class _$Home extends Home {
     required TResult Function() unknown,
     required TResult Function() splash,
     required TResult Function() register,
+    required TResult Function(String phone) verifyOTP,
     required TResult Function() home,
   }) {
     return home();
@@ -500,6 +681,7 @@ class _$Home extends Home {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
   }) {
     return home?.call();
@@ -511,6 +693,7 @@ class _$Home extends Home {
     TResult Function()? unknown,
     TResult Function()? splash,
     TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -526,6 +709,7 @@ class _$Home extends Home {
     required TResult Function(Unknown value) unknown,
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
+    required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(Home value) home,
   }) {
     return home(this);
@@ -537,6 +721,7 @@ class _$Home extends Home {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
   }) {
     return home?.call(this);
@@ -548,6 +733,7 @@ class _$Home extends Home {
     TResult Function(Unknown value)? unknown,
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -1531,14 +1717,9 @@ AuthData _$AuthDataFromJson(Map<String, dynamic> json) {
 class _$AuthDataTearOff {
   const _$AuthDataTearOff();
 
-  _AuthData call(
-      {required String accessToken,
-      required String refreshToken,
-      required int accountId}) {
+  _AuthData call({required String phone}) {
     return _AuthData(
-      accessToken: accessToken,
-      refreshToken: refreshToken,
-      accountId: accountId,
+      phone: phone,
     );
   }
 
@@ -1552,9 +1733,7 @@ const $AuthData = _$AuthDataTearOff();
 
 /// @nodoc
 mixin _$AuthData {
-  String get accessToken => throw _privateConstructorUsedError;
-  String get refreshToken => throw _privateConstructorUsedError;
-  int get accountId => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1566,7 +1745,7 @@ mixin _$AuthData {
 abstract class $AuthDataCopyWith<$Res> {
   factory $AuthDataCopyWith(AuthData value, $Res Function(AuthData) then) =
       _$AuthDataCopyWithImpl<$Res>;
-  $Res call({String accessToken, String refreshToken, int accountId});
+  $Res call({String phone});
 }
 
 /// @nodoc
@@ -1579,23 +1758,13 @@ class _$AuthDataCopyWithImpl<$Res> implements $AuthDataCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? accessToken = freezed,
-    Object? refreshToken = freezed,
-    Object? accountId = freezed,
+    Object? phone = freezed,
   }) {
     return _then(_value.copyWith(
-      accessToken: accessToken == freezed
-          ? _value.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      refreshToken: refreshToken == freezed
-          ? _value.refreshToken
-          : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      accountId: accountId == freezed
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -1605,7 +1774,7 @@ abstract class _$AuthDataCopyWith<$Res> implements $AuthDataCopyWith<$Res> {
   factory _$AuthDataCopyWith(_AuthData value, $Res Function(_AuthData) then) =
       __$AuthDataCopyWithImpl<$Res>;
   @override
-  $Res call({String accessToken, String refreshToken, int accountId});
+  $Res call({String phone});
 }
 
 /// @nodoc
@@ -1619,23 +1788,13 @@ class __$AuthDataCopyWithImpl<$Res> extends _$AuthDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? accessToken = freezed,
-    Object? refreshToken = freezed,
-    Object? accountId = freezed,
+    Object? phone = freezed,
   }) {
     return _then(_AuthData(
-      accessToken: accessToken == freezed
-          ? _value.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      refreshToken: refreshToken == freezed
-          ? _value.refreshToken
-          : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      accountId: accountId == freezed
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -1643,47 +1802,30 @@ class __$AuthDataCopyWithImpl<$Res> extends _$AuthDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AuthData implements _AuthData {
-  _$_AuthData(
-      {required this.accessToken,
-      required this.refreshToken,
-      required this.accountId});
+  _$_AuthData({required this.phone});
 
   factory _$_AuthData.fromJson(Map<String, dynamic> json) =>
       _$$_AuthDataFromJson(json);
 
   @override
-  final String accessToken;
-  @override
-  final String refreshToken;
-  @override
-  final int accountId;
+  final String phone;
 
   @override
   String toString() {
-    return 'AuthData(accessToken: $accessToken, refreshToken: $refreshToken, accountId: $accountId)';
+    return 'AuthData(phone: $phone)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AuthData &&
-            (identical(other.accessToken, accessToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.accessToken, accessToken)) &&
-            (identical(other.refreshToken, refreshToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshToken, refreshToken)) &&
-            (identical(other.accountId, accountId) ||
-                const DeepCollectionEquality()
-                    .equals(other.accountId, accountId)));
+            (identical(other.phone, phone) ||
+                const DeepCollectionEquality().equals(other.phone, phone)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(accessToken) ^
-      const DeepCollectionEquality().hash(refreshToken) ^
-      const DeepCollectionEquality().hash(accountId);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(phone);
 
   @JsonKey(ignore: true)
   @override
@@ -1697,19 +1839,12 @@ class _$_AuthData implements _AuthData {
 }
 
 abstract class _AuthData implements AuthData {
-  factory _AuthData(
-      {required String accessToken,
-      required String refreshToken,
-      required int accountId}) = _$_AuthData;
+  factory _AuthData({required String phone}) = _$_AuthData;
 
   factory _AuthData.fromJson(Map<String, dynamic> json) = _$_AuthData.fromJson;
 
   @override
-  String get accessToken => throw _privateConstructorUsedError;
-  @override
-  String get refreshToken => throw _privateConstructorUsedError;
-  @override
-  int get accountId => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AuthDataCopyWith<_AuthData> get copyWith =>

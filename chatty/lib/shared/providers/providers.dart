@@ -1,20 +1,22 @@
-import 'package:chatty/services/rest_auth_service/rest_auth_service.dart';
+import 'package:chatty/services/cloud_functions_serverless_service/cloud_functions_serverless_service.dart';
 import 'package:chatty/shared/router/router_store.dart';
 import 'package:chatty/shared/state/index.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:http/http.dart' as http;
 
 // Service layer
 
-final Provider<RestAuthService> restAuthServicePOD =
-    Provider<RestAuthService>((ProviderReference ref) {
-  return RestAuthService();
+final Provider<CloudFunctionsService> cloudFunctionsServicePOD =
+    Provider<CloudFunctionsService>((ProviderReference ref) {
+  final http.Client client = http.Client();
+  return CloudFunctionsService(client: client);
 });
 
 // Global state layer
 
 final Provider<AuthStore> authStorePOD = Provider<AuthStore>((ProviderReference ref) {
-  final RestAuthService authService = ref.watch(restAuthServicePOD);
-  return AuthStore(authService: authService);
+  final CloudFunctionsService cloudFunctionsService = ref.watch(cloudFunctionsServicePOD);
+  return AuthStore(authService: cloudFunctionsService);
 });
 
 final Provider<RouterStore> routerStorePOD = Provider<RouterStore>((ProviderReference ref) {

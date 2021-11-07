@@ -9,29 +9,40 @@ class ChattyRouterInformationParser extends RouteInformationParser<RouterState> 
 
     final String path = uri.path;
 
-    switch (path) {
-      case '/':
-        return const RouterState.home();
-      case '/splash':
-        return const RouterState.splash();
-      default:
-        return const RouterState.unknown();
+    if (path == '/') {
+      return const RouterState.home();
+    } else if (path == '/register') {
+      return const RouterState.register();
+    } else if (path == '/splash') {
+      return const RouterState.splash();
+    } else if (uri.pathSegments.first == 'verify-otp-page') {
+      if (uri.pathSegments.length >= 2) {
+        return RouterState.verifyOTP(phone: '${uri.pathSegments[1]}');
+      }
     }
+
+    return const RouterState.unknown();
   }
 
   @override
   RouteInformation? restoreRouteInformation(RouterState configuration) {
     if (configuration is Home) {
       setWebPageTitle('Chatty | Home');
-      return const RouteInformation(location: '/users');
+      return const RouteInformation(location: '/home');
     } else if (configuration is Register) {
       setWebPageTitle('Chatty | Register');
-      return const RouteInformation(location: '/login');
+      return const RouteInformation(location: '/register');
     } else if (configuration is Splash) {
       setWebPageTitle('Chatty');
       return const RouteInformation(location: '/');
+    } else if (configuration is VerifyOTP) {
+      setWebPageTitle('Chatty | Verify OTP');
+      return RouteInformation(
+        location: '/verify-otp',
+        state: configuration.phone,
+      );
     } else if (configuration is Unknown) {
-      setWebPageTitle('Unknown | Labouroo');
+      setWebPageTitle('Chatty | Unknown ');
       return const RouteInformation(location: '/unknown');
     }
 

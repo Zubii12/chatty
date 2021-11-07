@@ -109,14 +109,10 @@ Map<String, dynamic> _$$_StoryToJson(_$_Story instance) => <String, dynamic>{
     };
 
 _$_AuthData _$$_AuthDataFromJson(Map<String, dynamic> json) => _$_AuthData(
-      accessToken: json['accessToken'] as String,
-      refreshToken: json['refreshToken'] as String,
-      accountId: json['accountId'] as int,
+      phone: json['phone'] as String,
     );
 
 Map<String, dynamic> _$$_AuthDataToJson(_$_AuthData instance) =>
     <String, dynamic>{
-      'accessToken': instance.accessToken,
-      'refreshToken': instance.refreshToken,
-      'accountId': instance.accountId,
+      'phone': instance.phone,
     };

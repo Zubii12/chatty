@@ -23,6 +23,8 @@ dependencies:
   flutter_mobx: ^2.0.0
   url_strategy: ^0.2.0
   json_serializable: any
+  shared_preferences: ^2.0.8
+  country_code_picker: ^2.0.2
 
 dev_dependencies:
   flutter_test:

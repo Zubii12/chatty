@@ -3,6 +3,7 @@ import 'package:chatty/screens/home_page/home_page.dart';
 import 'package:chatty/screens/register_page/register_page.dart';
 import 'package:chatty/screens/static_pages/splash_page.dart';
 import 'package:chatty/screens/static_pages/unknown_page.dart';
+import 'package:chatty/screens/verify_otp_page/verify_otp_page.dart';
 import 'package:chatty/shared/state/index.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
@@ -42,6 +43,11 @@ abstract class _RouterStore with Store {
         if (_authStore.authState == AuthState.unauthenticated) ...<Page<dynamic>>[
           if (_routerState is Register)
             const _NoAnimationPage(child: RegisterPage(), key: ValueKey<String>('register-page')),
+          if (_routerState is VerifyOTP)
+            _NoAnimationPage(
+              child: VerifyOTPPage(phone: (_routerState as VerifyOTP).phone),
+              key: const ValueKey<String>('verify-otp-page'),
+            )
         ],
 
         // Authorized stack
@@ -62,7 +68,7 @@ abstract class _RouterStore with Store {
 
   @action
   void setNewRoutePath(RouterState newState) {
-    if (_authStore.authState == AuthState.unauthenticated) {
+    if (_authStore.authState == AuthState.unauthenticated && newState.isAuthorized) {
       _restoreRoute = newState;
 
       _routerState = const RouterState.register();

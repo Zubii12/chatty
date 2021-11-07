@@ -8,7 +8,7 @@ class HomePage extends HookWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('home page'),
+        child: Text('home page '),
       ),
     );
   }

@@ -8,7 +8,7 @@ class AuthStore extends _AuthStore with _$AuthStore {
 
 abstract class _AuthStore with Store {
   _AuthStore({required AuthService authService}) : _authService = authService {
-    _authenticateWithStoredToken();
+    _loginWithStoredPhone();
   }
 
   final AuthService _authService;
@@ -23,14 +23,17 @@ abstract class _AuthStore with Store {
   bool _isConnected = true;
 
   @action
-  Future<void> _authenticateWithStoredToken() async {
+  Future<void> _loginWithStoredPhone() async {
     try {
-      await Future<StateError>.delayed(const Duration(seconds: 3), () {
-        throw StateError('sal');
-      });
-    } on StateError {
-      _authData = null;
-    } catch (e, _) {
+      final String? phone = await _authService.login().timeout(const Duration(seconds: 10));
+      await Future<void>.delayed(const Duration(seconds: 3));
+
+      if (phone != null) {
+        _authData = AuthData(phone: phone);
+        _isConnected = true;
+      }
+    } catch (e, t) {
+      log('Login with stored phone error', error: e, stackTrace: t);
       _isConnected = false;
     } finally {
       _authChecked = true;
@@ -50,19 +53,46 @@ abstract class _AuthStore with Store {
   }
 
   @readonly
-  StateModel<void> _loginState = const StateModel<void>.fulfilled(data: null);
+  StateModel<String> _sendOTPState = const StateModel<String>.loading();
 
   @action
-  Future<void> login({required String phone}) async {
+  Future<void> sendOTP({required String phone}) async {
     try {
-      _loginState = const StateModel<void>.loading();
+      _sendOTPState = const StateModel<String>.loading();
 
-      await _authService.login(phone: phone).timeout(const Duration(seconds: 10));
+      final String requestId = await _authService //
+          .sendOTP(phone: phone)
+          .timeout(const Duration(seconds: 20));
 
-      _loginState = const StateModel<void>.fulfilled(data: null);
+      _sendOTPState = StateModel<String>.fulfilled(data: requestId);
     } catch (e, t) {
-      _loginState = const StateModel<void>.error(message: 'Login failed');
-      log('Login error: ', error: e, stackTrace: t);
+      _sendOTPState = const StateModel<String>.error(message: 'Failed to send the code.');
+      log('Send OTP error: ', error: e, stackTrace: t);
+    }
+  }
+
+  @readonly
+  StateModel<void> _verifyOTPState = const StateModel<void>.fulfilled(data: null);
+
+  @action
+  Future<void> verifyOTP({
+    required String phone,
+    required String code,
+    required String requestId,
+  }) async {
+    try {
+      _verifyOTPState = const StateModel<void>.loading();
+
+      await _authService
+          .verifyOTP(phone: phone, code: code, requestId: requestId)
+          .timeout(const Duration(seconds: 10));
+
+      await _authService.register(phone: phone).timeout(const Duration(seconds: 10));
+      _authData = AuthData(phone: phone);
+      _verifyOTPState = const StateModel<void>.fulfilled(data: null);
+    } catch (e, t) {
+      _verifyOTPState = const StateModel<void>.error(message: 'Failed to verify the code.');
+      log('Verify OTP error: ', error: e, stackTrace: t);
     }
   }
 }

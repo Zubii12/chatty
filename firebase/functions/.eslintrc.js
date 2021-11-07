@@ -77,6 +77,7 @@ module.exports = {
       },
     ],
     indent: 'off',
+    camelcase: 'off',
   },
   settings: {
     jsdoc: {
