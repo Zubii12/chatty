@@ -1,5 +1,11 @@
 part of models;
 
+enum HomePageTab {
+  contacts,
+  chats,
+  more,
+}
+
 @freezed
 class RouterState with _$RouterState {
   const RouterState._();
@@ -8,7 +14,7 @@ class RouterState with _$RouterState {
   const factory RouterState.register() = Register;
   const factory RouterState.verifyOTP({required String phone}) = VerifyOTP;
   const factory RouterState.completeProfile() = CompleteProfile;
-  const factory RouterState.home() = Home;
+  const factory RouterState.home({required HomePageTab currentTab}) = Home;
 
   bool get isAuthorized => this is Home || this is CompleteProfile;
 }

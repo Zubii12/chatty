@@ -29,7 +29,7 @@ A new Chat app project.
 
 ## Home page
 
-- [ ] add bottom navigation
+- [x] add bottom navigation bar
 - [ ] add contacts page
 - [ ] add chats page
 - [ ] add more page

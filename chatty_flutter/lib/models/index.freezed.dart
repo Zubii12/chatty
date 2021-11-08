@@ -39,8 +39,10 @@ class _$RouterStateTearOff {
     return const CompleteProfile();
   }
 
-  Home home() {
-    return const Home();
+  Home home({required HomePageTab currentTab}) {
+    return Home(
+      currentTab: currentTab,
+    );
   }
 }
 
@@ -56,7 +58,7 @@ mixin _$RouterState {
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
     required TResult Function() completeProfile,
-    required TResult Function() home,
+    required TResult Function(HomePageTab currentTab) home,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,7 +68,7 @@ mixin _$RouterState {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,7 +78,7 @@ mixin _$RouterState {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,7 +173,7 @@ class _$Unknown extends Unknown {
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
     required TResult Function() completeProfile,
-    required TResult Function() home,
+    required TResult Function(HomePageTab currentTab) home,
   }) {
     return unknown();
   }
@@ -184,7 +186,7 @@ class _$Unknown extends Unknown {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
   }) {
     return unknown?.call();
   }
@@ -197,7 +199,7 @@ class _$Unknown extends Unknown {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -297,7 +299,7 @@ class _$Splash extends Splash {
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
     required TResult Function() completeProfile,
-    required TResult Function() home,
+    required TResult Function(HomePageTab currentTab) home,
   }) {
     return splash();
   }
@@ -310,7 +312,7 @@ class _$Splash extends Splash {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
   }) {
     return splash?.call();
   }
@@ -323,7 +325,7 @@ class _$Splash extends Splash {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
     required TResult orElse(),
   }) {
     if (splash != null) {
@@ -423,7 +425,7 @@ class _$Register extends Register {
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
     required TResult Function() completeProfile,
-    required TResult Function() home,
+    required TResult Function(HomePageTab currentTab) home,
   }) {
     return register();
   }
@@ -436,7 +438,7 @@ class _$Register extends Register {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
   }) {
     return register?.call();
   }
@@ -449,7 +451,7 @@ class _$Register extends Register {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -574,7 +576,7 @@ class _$VerifyOTP extends VerifyOTP {
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
     required TResult Function() completeProfile,
-    required TResult Function() home,
+    required TResult Function(HomePageTab currentTab) home,
   }) {
     return verifyOTP(phone);
   }
@@ -587,7 +589,7 @@ class _$VerifyOTP extends VerifyOTP {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
   }) {
     return verifyOTP?.call(phone);
   }
@@ -600,7 +602,7 @@ class _$VerifyOTP extends VerifyOTP {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
     required TResult orElse(),
   }) {
     if (verifyOTP != null) {
@@ -708,7 +710,7 @@ class _$CompleteProfile extends CompleteProfile {
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
     required TResult Function() completeProfile,
-    required TResult Function() home,
+    required TResult Function(HomePageTab currentTab) home,
   }) {
     return completeProfile();
   }
@@ -721,7 +723,7 @@ class _$CompleteProfile extends CompleteProfile {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
   }) {
     return completeProfile?.call();
   }
@@ -734,7 +736,7 @@ class _$CompleteProfile extends CompleteProfile {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
     required TResult orElse(),
   }) {
     if (completeProfile != null) {
@@ -796,6 +798,7 @@ abstract class CompleteProfile extends RouterState {
 abstract class $HomeCopyWith<$Res> {
   factory $HomeCopyWith(Home value, $Res Function(Home) then) =
       _$HomeCopyWithImpl<$Res>;
+  $Res call({HomePageTab currentTab});
 }
 
 /// @nodoc
@@ -806,25 +809,50 @@ class _$HomeCopyWithImpl<$Res> extends _$RouterStateCopyWithImpl<$Res>
 
   @override
   Home get _value => super._value as Home;
+
+  @override
+  $Res call({
+    Object? currentTab = freezed,
+  }) {
+    return _then(Home(
+      currentTab: currentTab == freezed
+          ? _value.currentTab
+          : currentTab // ignore: cast_nullable_to_non_nullable
+              as HomePageTab,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$Home extends Home {
-  const _$Home() : super._();
+  const _$Home({required this.currentTab}) : super._();
+
+  @override
+  final HomePageTab currentTab;
 
   @override
   String toString() {
-    return 'RouterState.home()';
+    return 'RouterState.home(currentTab: $currentTab)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Home);
+    return identical(this, other) ||
+        (other is Home &&
+            (identical(other.currentTab, currentTab) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentTab, currentTab)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(currentTab);
+
+  @JsonKey(ignore: true)
+  @override
+  $HomeCopyWith<Home> get copyWith =>
+      _$HomeCopyWithImpl<Home>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -834,9 +862,9 @@ class _$Home extends Home {
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
     required TResult Function() completeProfile,
-    required TResult Function() home,
+    required TResult Function(HomePageTab currentTab) home,
   }) {
-    return home();
+    return home(currentTab);
   }
 
   @override
@@ -847,9 +875,9 @@ class _$Home extends Home {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
   }) {
-    return home?.call();
+    return home?.call(currentTab);
   }
 
   @override
@@ -860,11 +888,11 @@ class _$Home extends Home {
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
     TResult Function()? completeProfile,
-    TResult Function()? home,
+    TResult Function(HomePageTab currentTab)? home,
     required TResult orElse(),
   }) {
     if (home != null) {
-      return home();
+      return home(currentTab);
     }
     return orElse();
   }
@@ -914,8 +942,12 @@ class _$Home extends Home {
 }
 
 abstract class Home extends RouterState {
-  const factory Home() = _$Home;
+  const factory Home({required HomePageTab currentTab}) = _$Home;
   const Home._() : super._();
+
+  HomePageTab get currentTab => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $HomeCopyWith<Home> get copyWith => throw _privateConstructorUsedError;
 }
 
 User _$UserFromJson(Map<String, dynamic> json) {

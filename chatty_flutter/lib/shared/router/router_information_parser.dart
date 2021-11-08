@@ -10,7 +10,11 @@ class ChattyRouterInformationParser extends RouteInformationParser<RouterState> 
     final String path = uri.path;
 
     if (path == '/') {
-      return const RouterState.home();
+      return const RouterState.home(currentTab: HomePageTab.chats);
+    } else if (path == '/contacts') {
+      return const RouterState.home(currentTab: HomePageTab.contacts);
+    } else if (path == '/more') {
+      return const RouterState.home(currentTab: HomePageTab.more);
     } else if (path == '/register') {
       return const RouterState.register();
     } else if (path == '/splash') {
@@ -27,8 +31,17 @@ class ChattyRouterInformationParser extends RouteInformationParser<RouterState> 
   @override
   RouteInformation? restoreRouteInformation(RouterState configuration) {
     if (configuration is Home) {
-      setWebPageTitle('Chatty | Home');
-      return const RouteInformation(location: '/home');
+      switch (configuration.currentTab) {
+        case HomePageTab.chats:
+          setWebPageTitle('Chatty | Chats');
+          return const RouteInformation(location: '/chats');
+        case HomePageTab.contacts:
+          setWebPageTitle('Chatty | Contacts');
+          return const RouteInformation(location: '/contacts');
+        case HomePageTab.more:
+          setWebPageTitle('Chatty | More');
+          return const RouteInformation(location: '/more');
+      }
     } else if (configuration is Register) {
       setWebPageTitle('Chatty | Register');
       return const RouteInformation(location: '/register');

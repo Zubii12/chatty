@@ -28,7 +28,7 @@ abstract class _RouterStore with Store {
           _restoreRoute = null;
         } else {
           if (!_routerState.isAuthorized) {
-            _routerState = const RouterState.home();
+            _routerState = const RouterState.home(currentTab: HomePageTab.chats);
           }
         }
       }
@@ -43,6 +43,7 @@ abstract class _RouterStore with Store {
   final UserStore _userStore;
 
   RouterState? _restoreRoute;
+  HomePageTab? _lastTab;
 
   @computed
   List<Page<dynamic>> get pages => <Page<dynamic>>[
@@ -60,7 +61,10 @@ abstract class _RouterStore with Store {
         // Authorized stack
         if (_authStore.authState == AuthState.authenticated) ...<Page<dynamic>>[
           if (_routerState is Home)
-            const _NoAnimationPage(child: HomePage(), key: ValueKey<String>('home-page')),
+            _NoAnimationPage(
+              child: HomePage(currentTab: (_routerState as Home).currentTab),
+              key: ValueKey<String>('home-page${(_routerState as Home).currentTab}'),
+            ),
           if (!_userStore.isProfileCompleted)
             const _NoAnimationPage(
               child: CompleteProfilePage(),
@@ -87,6 +91,11 @@ abstract class _RouterStore with Store {
 
       _routerState = const RouterState.register();
     } else {
+      if (newState is Home) {
+        _lastTab = newState.currentTab;
+      } else if (_routerState is Home) {
+        _lastTab = (_routerState as Home).currentTab;
+      }
       _routerState = newState;
     }
   }
@@ -97,7 +106,7 @@ abstract class _RouterStore with Store {
 
     if (success) {
       if (_authStore.authState == AuthState.authenticated) {
-        _routerState = const RouterState.home();
+        _routerState = RouterState.home(currentTab: _lastTab ?? HomePageTab.chats);
       }
       if (_authStore.authState == AuthState.unauthenticated) {
         _routerState = const RouterState.register();
@@ -107,6 +116,10 @@ abstract class _RouterStore with Store {
       }
     }
     return success;
+  }
+
+  void changeHomePageTab({required HomePageTab tab}) {
+    _routerState = RouterState.home(currentTab: tab);
   }
 }
 

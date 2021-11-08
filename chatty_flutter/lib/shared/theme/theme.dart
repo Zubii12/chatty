@@ -30,6 +30,13 @@ class Palette {
 ThemeData get appTheme {
   return ThemeData(
     scaffoldBackgroundColor: Palette.white,
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Palette.white,
+      selectedLabelStyle: TextStyle(
+        color: Palette.activeBlack,
+      ),
+      selectedItemColor: Palette.activeBlack,
+    ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       backgroundColor: Palette.white,
@@ -63,6 +70,13 @@ ThemeData get appTheme {
 ThemeData get appThemeDark {
   return ThemeData(
     scaffoldBackgroundColor: Palette.activeBlack,
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Palette.activeBlack,
+      selectedLabelStyle: TextStyle(
+        color: Palette.offWhite,
+      ),
+      selectedItemColor: Palette.offWhite,
+    ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       backgroundColor: Palette.activeBlack,
