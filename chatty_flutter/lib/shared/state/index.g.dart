@@ -136,3 +136,81 @@ authState: ${authState}
     ''';
   }
 }
+
+mixin _$UserStore on _UserStore, Store {
+  final _$_isProfileCompletedAtom =
+      Atom(name: '_UserStore._isProfileCompleted');
+
+  bool get isProfileCompleted {
+    _$_isProfileCompletedAtom.reportRead();
+    return super._isProfileCompleted;
+  }
+
+  @override
+  bool get _isProfileCompleted => isProfileCompleted;
+
+  @override
+  set _isProfileCompleted(bool value) {
+    _$_isProfileCompletedAtom.reportWrite(value, super._isProfileCompleted, () {
+      super._isProfileCompleted = value;
+    });
+  }
+
+  final _$_userDataStateAtom = Atom(name: '_UserStore._userDataState');
+
+  StateModel<User> get userDataState {
+    _$_userDataStateAtom.reportRead();
+    return super._userDataState;
+  }
+
+  @override
+  StateModel<User> get _userDataState => userDataState;
+
+  @override
+  set _userDataState(StateModel<User> value) {
+    _$_userDataStateAtom.reportWrite(value, super._userDataState, () {
+      super._userDataState = value;
+    });
+  }
+
+  final _$_updateUserDataStateAtom =
+      Atom(name: '_UserStore._updateUserDataState');
+
+  StateModel<void> get updateUserDataState {
+    _$_updateUserDataStateAtom.reportRead();
+    return super._updateUserDataState;
+  }
+
+  @override
+  StateModel<void> get _updateUserDataState => updateUserDataState;
+
+  @override
+  set _updateUserDataState(StateModel<void> value) {
+    _$_updateUserDataStateAtom.reportWrite(value, super._updateUserDataState,
+        () {
+      super._updateUserDataState = value;
+    });
+  }
+
+  final _$_fetchUserDataAsyncAction = AsyncAction('_UserStore._fetchUserData');
+
+  @override
+  Future<void> _fetchUserData() {
+    return _$_fetchUserDataAsyncAction.run(() => super._fetchUserData());
+  }
+
+  final _$updateUserDataAsyncAction = AsyncAction('_UserStore.updateUserData');
+
+  @override
+  Future<void> updateUserData({required String name, required String? photo}) {
+    return _$updateUserDataAsyncAction
+        .run(() => super.updateUserData(name: name, photo: photo));
+  }
+
+  @override
+  String toString() {
+    return '''
+
+    ''';
+  }
+}

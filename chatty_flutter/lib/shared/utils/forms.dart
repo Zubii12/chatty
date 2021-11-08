@@ -10,4 +10,9 @@ abstract class ChattyFormGroups {
       ]),
     },
   );
+
+  static final FormGroup completeProfileFormGroup = FormGroup(<String, FormControl<String>>{
+    'name': FormControl<String>(validators: <ValidatorFunction>[Validators.required]),
+    'photo': FormControl<String>(),
+  });
 }

@@ -35,6 +35,10 @@ class _$RouterStateTearOff {
     );
   }
 
+  CompleteProfile completeProfile() {
+    return const CompleteProfile();
+  }
+
   Home home() {
     return const Home();
   }
@@ -51,6 +55,7 @@ mixin _$RouterState {
     required TResult Function() splash,
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
+    required TResult Function() completeProfile,
     required TResult Function() home,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +65,7 @@ mixin _$RouterState {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +75,7 @@ mixin _$RouterState {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
     required TResult orElse(),
   }) =>
@@ -79,6 +86,7 @@ mixin _$RouterState {
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
     required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(CompleteProfile value) completeProfile,
     required TResult Function(Home value) home,
   }) =>
       throw _privateConstructorUsedError;
@@ -88,6 +96,7 @@ mixin _$RouterState {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
   }) =>
       throw _privateConstructorUsedError;
@@ -97,6 +106,7 @@ mixin _$RouterState {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) =>
@@ -160,6 +170,7 @@ class _$Unknown extends Unknown {
     required TResult Function() splash,
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
+    required TResult Function() completeProfile,
     required TResult Function() home,
   }) {
     return unknown();
@@ -172,6 +183,7 @@ class _$Unknown extends Unknown {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
   }) {
     return unknown?.call();
@@ -184,6 +196,7 @@ class _$Unknown extends Unknown {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -200,6 +213,7 @@ class _$Unknown extends Unknown {
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
     required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(CompleteProfile value) completeProfile,
     required TResult Function(Home value) home,
   }) {
     return unknown(this);
@@ -212,6 +226,7 @@ class _$Unknown extends Unknown {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
   }) {
     return unknown?.call(this);
@@ -224,6 +239,7 @@ class _$Unknown extends Unknown {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -280,6 +296,7 @@ class _$Splash extends Splash {
     required TResult Function() splash,
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
+    required TResult Function() completeProfile,
     required TResult Function() home,
   }) {
     return splash();
@@ -292,6 +309,7 @@ class _$Splash extends Splash {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
   }) {
     return splash?.call();
@@ -304,6 +322,7 @@ class _$Splash extends Splash {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -320,6 +339,7 @@ class _$Splash extends Splash {
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
     required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(CompleteProfile value) completeProfile,
     required TResult Function(Home value) home,
   }) {
     return splash(this);
@@ -332,6 +352,7 @@ class _$Splash extends Splash {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
   }) {
     return splash?.call(this);
@@ -344,6 +365,7 @@ class _$Splash extends Splash {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -400,6 +422,7 @@ class _$Register extends Register {
     required TResult Function() splash,
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
+    required TResult Function() completeProfile,
     required TResult Function() home,
   }) {
     return register();
@@ -412,6 +435,7 @@ class _$Register extends Register {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
   }) {
     return register?.call();
@@ -424,6 +448,7 @@ class _$Register extends Register {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -440,6 +465,7 @@ class _$Register extends Register {
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
     required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(CompleteProfile value) completeProfile,
     required TResult Function(Home value) home,
   }) {
     return register(this);
@@ -452,6 +478,7 @@ class _$Register extends Register {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
   }) {
     return register?.call(this);
@@ -464,6 +491,7 @@ class _$Register extends Register {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -545,6 +573,7 @@ class _$VerifyOTP extends VerifyOTP {
     required TResult Function() splash,
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
+    required TResult Function() completeProfile,
     required TResult Function() home,
   }) {
     return verifyOTP(phone);
@@ -557,6 +586,7 @@ class _$VerifyOTP extends VerifyOTP {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
   }) {
     return verifyOTP?.call(phone);
@@ -569,6 +599,7 @@ class _$VerifyOTP extends VerifyOTP {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -585,6 +616,7 @@ class _$VerifyOTP extends VerifyOTP {
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
     required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(CompleteProfile value) completeProfile,
     required TResult Function(Home value) home,
   }) {
     return verifyOTP(this);
@@ -597,6 +629,7 @@ class _$VerifyOTP extends VerifyOTP {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
   }) {
     return verifyOTP?.call(this);
@@ -609,6 +642,7 @@ class _$VerifyOTP extends VerifyOTP {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -627,6 +661,135 @@ abstract class VerifyOTP extends RouterState {
   @JsonKey(ignore: true)
   $VerifyOTPCopyWith<VerifyOTP> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CompleteProfileCopyWith<$Res> {
+  factory $CompleteProfileCopyWith(
+          CompleteProfile value, $Res Function(CompleteProfile) then) =
+      _$CompleteProfileCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$CompleteProfileCopyWithImpl<$Res>
+    extends _$RouterStateCopyWithImpl<$Res>
+    implements $CompleteProfileCopyWith<$Res> {
+  _$CompleteProfileCopyWithImpl(
+      CompleteProfile _value, $Res Function(CompleteProfile) _then)
+      : super(_value, (v) => _then(v as CompleteProfile));
+
+  @override
+  CompleteProfile get _value => super._value as CompleteProfile;
+}
+
+/// @nodoc
+
+class _$CompleteProfile extends CompleteProfile {
+  const _$CompleteProfile() : super._();
+
+  @override
+  String toString() {
+    return 'RouterState.completeProfile()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is CompleteProfile);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unknown,
+    required TResult Function() splash,
+    required TResult Function() register,
+    required TResult Function(String phone) verifyOTP,
+    required TResult Function() completeProfile,
+    required TResult Function() home,
+  }) {
+    return completeProfile();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
+    TResult Function()? home,
+  }) {
+    return completeProfile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? splash,
+    TResult Function()? register,
+    TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
+    TResult Function()? home,
+    required TResult orElse(),
+  }) {
+    if (completeProfile != null) {
+      return completeProfile();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unknown value) unknown,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Register value) register,
+    required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(CompleteProfile value) completeProfile,
+    required TResult Function(Home value) home,
+  }) {
+    return completeProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
+    TResult Function(Home value)? home,
+  }) {
+    return completeProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unknown value)? unknown,
+    TResult Function(Splash value)? splash,
+    TResult Function(Register value)? register,
+    TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
+    TResult Function(Home value)? home,
+    required TResult orElse(),
+  }) {
+    if (completeProfile != null) {
+      return completeProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CompleteProfile extends RouterState {
+  const factory CompleteProfile() = _$CompleteProfile;
+  const CompleteProfile._() : super._();
 }
 
 /// @nodoc
@@ -670,6 +833,7 @@ class _$Home extends Home {
     required TResult Function() splash,
     required TResult Function() register,
     required TResult Function(String phone) verifyOTP,
+    required TResult Function() completeProfile,
     required TResult Function() home,
   }) {
     return home();
@@ -682,6 +846,7 @@ class _$Home extends Home {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
   }) {
     return home?.call();
@@ -694,6 +859,7 @@ class _$Home extends Home {
     TResult Function()? splash,
     TResult Function()? register,
     TResult Function(String phone)? verifyOTP,
+    TResult Function()? completeProfile,
     TResult Function()? home,
     required TResult orElse(),
   }) {
@@ -710,6 +876,7 @@ class _$Home extends Home {
     required TResult Function(Splash value) splash,
     required TResult Function(Register value) register,
     required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(CompleteProfile value) completeProfile,
     required TResult Function(Home value) home,
   }) {
     return home(this);
@@ -722,6 +889,7 @@ class _$Home extends Home {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
   }) {
     return home?.call(this);
@@ -734,6 +902,7 @@ class _$Home extends Home {
     TResult Function(Splash value)? splash,
     TResult Function(Register value)? register,
     TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(CompleteProfile value)? completeProfile,
     TResult Function(Home value)? home,
     required TResult orElse(),
   }) {
@@ -760,21 +929,21 @@ class _$UserTearOff {
   _User call(
       {required int id,
       required String name,
-      String? photo,
       required String phone,
-      required List<Room> rooms,
-      required List<Story> stories,
+      String? photo,
+      required bool phoneVerified,
       required DateTime lastSeen,
-      required DateTime lastTyped}) {
+      required DateTime lastTyped,
+      required DateTime createdAt}) {
     return _User(
       id: id,
       name: name,
-      photo: photo,
       phone: phone,
-      rooms: rooms,
-      stories: stories,
+      photo: photo,
+      phoneVerified: phoneVerified,
       lastSeen: lastSeen,
       lastTyped: lastTyped,
+      createdAt: createdAt,
     );
   }
 
@@ -790,12 +959,12 @@ const $User = _$UserTearOff();
 mixin _$User {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String? get photo => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
-  List<Room> get rooms => throw _privateConstructorUsedError;
-  List<Story> get stories => throw _privateConstructorUsedError;
+  String? get photo => throw _privateConstructorUsedError;
+  bool get phoneVerified => throw _privateConstructorUsedError;
   DateTime get lastSeen => throw _privateConstructorUsedError;
   DateTime get lastTyped => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -809,12 +978,12 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {int id,
       String name,
-      String? photo,
       String phone,
-      List<Room> rooms,
-      List<Story> stories,
+      String? photo,
+      bool phoneVerified,
       DateTime lastSeen,
-      DateTime lastTyped});
+      DateTime lastTyped,
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -829,12 +998,12 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? photo = freezed,
     Object? phone = freezed,
-    Object? rooms = freezed,
-    Object? stories = freezed,
+    Object? photo = freezed,
+    Object? phoneVerified = freezed,
     Object? lastSeen = freezed,
     Object? lastTyped = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -845,22 +1014,18 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: photo == freezed
-          ? _value.photo
-          : photo // ignore: cast_nullable_to_non_nullable
-              as String?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      rooms: rooms == freezed
-          ? _value.rooms
-          : rooms // ignore: cast_nullable_to_non_nullable
-              as List<Room>,
-      stories: stories == freezed
-          ? _value.stories
-          : stories // ignore: cast_nullable_to_non_nullable
-              as List<Story>,
+      photo: photo == freezed
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneVerified: phoneVerified == freezed
+          ? _value.phoneVerified
+          : phoneVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
       lastSeen: lastSeen == freezed
           ? _value.lastSeen
           : lastSeen // ignore: cast_nullable_to_non_nullable
@@ -868,6 +1033,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       lastTyped: lastTyped == freezed
           ? _value.lastTyped
           : lastTyped // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -881,12 +1050,12 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {int id,
       String name,
-      String? photo,
       String phone,
-      List<Room> rooms,
-      List<Story> stories,
+      String? photo,
+      bool phoneVerified,
       DateTime lastSeen,
-      DateTime lastTyped});
+      DateTime lastTyped,
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -902,12 +1071,12 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? photo = freezed,
     Object? phone = freezed,
-    Object? rooms = freezed,
-    Object? stories = freezed,
+    Object? photo = freezed,
+    Object? phoneVerified = freezed,
     Object? lastSeen = freezed,
     Object? lastTyped = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_User(
       id: id == freezed
@@ -918,22 +1087,18 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: photo == freezed
-          ? _value.photo
-          : photo // ignore: cast_nullable_to_non_nullable
-              as String?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      rooms: rooms == freezed
-          ? _value.rooms
-          : rooms // ignore: cast_nullable_to_non_nullable
-              as List<Room>,
-      stories: stories == freezed
-          ? _value.stories
-          : stories // ignore: cast_nullable_to_non_nullable
-              as List<Story>,
+      photo: photo == freezed
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneVerified: phoneVerified == freezed
+          ? _value.phoneVerified
+          : phoneVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
       lastSeen: lastSeen == freezed
           ? _value.lastSeen
           : lastSeen // ignore: cast_nullable_to_non_nullable
@@ -941,6 +1106,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       lastTyped: lastTyped == freezed
           ? _value.lastTyped
           : lastTyped // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -952,12 +1121,12 @@ class _$_User implements _User {
   _$_User(
       {required this.id,
       required this.name,
-      this.photo,
       required this.phone,
-      required this.rooms,
-      required this.stories,
+      this.photo,
+      required this.phoneVerified,
       required this.lastSeen,
-      required this.lastTyped});
+      required this.lastTyped,
+      required this.createdAt});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -966,21 +1135,21 @@ class _$_User implements _User {
   @override
   final String name;
   @override
-  final String? photo;
-  @override
   final String phone;
   @override
-  final List<Room> rooms;
+  final String? photo;
   @override
-  final List<Story> stories;
+  final bool phoneVerified;
   @override
   final DateTime lastSeen;
   @override
   final DateTime lastTyped;
+  @override
+  final DateTime createdAt;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, photo: $photo, phone: $phone, rooms: $rooms, stories: $stories, lastSeen: $lastSeen, lastTyped: $lastTyped)';
+    return 'User(id: $id, name: $name, phone: $phone, photo: $photo, phoneVerified: $phoneVerified, lastSeen: $lastSeen, lastTyped: $lastTyped, createdAt: $createdAt)';
   }
 
   @override
@@ -991,21 +1160,22 @@ class _$_User implements _User {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.photo, photo) ||
-                const DeepCollectionEquality().equals(other.photo, photo)) &&
             (identical(other.phone, phone) ||
                 const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.rooms, rooms) ||
-                const DeepCollectionEquality().equals(other.rooms, rooms)) &&
-            (identical(other.stories, stories) ||
+            (identical(other.photo, photo) ||
+                const DeepCollectionEquality().equals(other.photo, photo)) &&
+            (identical(other.phoneVerified, phoneVerified) ||
                 const DeepCollectionEquality()
-                    .equals(other.stories, stories)) &&
+                    .equals(other.phoneVerified, phoneVerified)) &&
             (identical(other.lastSeen, lastSeen) ||
                 const DeepCollectionEquality()
                     .equals(other.lastSeen, lastSeen)) &&
             (identical(other.lastTyped, lastTyped) ||
                 const DeepCollectionEquality()
-                    .equals(other.lastTyped, lastTyped)));
+                    .equals(other.lastTyped, lastTyped)) &&
+            (identical(other.createdAt, createdAt) ||
+                const DeepCollectionEquality()
+                    .equals(other.createdAt, createdAt)));
   }
 
   @override
@@ -1013,12 +1183,12 @@ class _$_User implements _User {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(photo) ^
       const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(rooms) ^
-      const DeepCollectionEquality().hash(stories) ^
+      const DeepCollectionEquality().hash(photo) ^
+      const DeepCollectionEquality().hash(phoneVerified) ^
       const DeepCollectionEquality().hash(lastSeen) ^
-      const DeepCollectionEquality().hash(lastTyped);
+      const DeepCollectionEquality().hash(lastTyped) ^
+      const DeepCollectionEquality().hash(createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -1035,12 +1205,12 @@ abstract class _User implements User {
   factory _User(
       {required int id,
       required String name,
-      String? photo,
       required String phone,
-      required List<Room> rooms,
-      required List<Story> stories,
+      String? photo,
+      required bool phoneVerified,
       required DateTime lastSeen,
-      required DateTime lastTyped}) = _$_User;
+      required DateTime lastTyped,
+      required DateTime createdAt}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -1049,17 +1219,17 @@ abstract class _User implements User {
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String? get photo => throw _privateConstructorUsedError;
-  @override
   String get phone => throw _privateConstructorUsedError;
   @override
-  List<Room> get rooms => throw _privateConstructorUsedError;
+  String? get photo => throw _privateConstructorUsedError;
   @override
-  List<Story> get stories => throw _privateConstructorUsedError;
+  bool get phoneVerified => throw _privateConstructorUsedError;
   @override
   DateTime get lastSeen => throw _privateConstructorUsedError;
   @override
   DateTime get lastTyped => throw _privateConstructorUsedError;
+  @override
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

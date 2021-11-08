@@ -7,7 +7,8 @@ class RouterState with _$RouterState {
   const factory RouterState.splash() = Splash;
   const factory RouterState.register() = Register;
   const factory RouterState.verifyOTP({required String phone}) = VerifyOTP;
+  const factory RouterState.completeProfile() = CompleteProfile;
   const factory RouterState.home() = Home;
 
-  bool get isAuthorized => this is Home;
+  bool get isAuthorized => this is Home || this is CompleteProfile;
 }

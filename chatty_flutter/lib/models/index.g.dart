@@ -9,27 +9,23 @@ part of models;
 _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       id: json['id'] as int,
       name: json['name'] as String,
-      photo: json['photo'] as String?,
       phone: json['phone'] as String,
-      rooms: (json['rooms'] as List<dynamic>)
-          .map((e) => Room.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      stories: (json['stories'] as List<dynamic>)
-          .map((e) => Story.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      photo: json['photo'] as String?,
+      phoneVerified: json['phoneVerified'] as bool,
       lastSeen: DateTime.parse(json['lastSeen'] as String),
       lastTyped: DateTime.parse(json['lastTyped'] as String),
+      createdAt: DateTime.parse(json['createdAt'] as String),
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'photo': instance.photo,
       'phone': instance.phone,
-      'rooms': instance.rooms,
-      'stories': instance.stories,
+      'photo': instance.photo,
+      'phoneVerified': instance.phoneVerified,
       'lastSeen': instance.lastSeen.toIso8601String(),
       'lastTyped': instance.lastTyped.toIso8601String(),
+      'createdAt': instance.createdAt.toIso8601String(),
     };
 
 _$_Room _$$_RoomFromJson(Map<String, dynamic> json) => _$_Room(

@@ -25,7 +25,7 @@ A new Chat app project.
 
 ## Profile account config
 
-- [ ] add profile account config
+- [x] add profile account config
 
 ## Home page
 

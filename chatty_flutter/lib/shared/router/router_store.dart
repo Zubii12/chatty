@@ -1,4 +1,5 @@
 import 'package:chatty/models/index.dart';
+import 'package:chatty/screens/complete_profile_page/complete_profile_page.dart';
 import 'package:chatty/screens/home_page/home_page.dart';
 import 'package:chatty/screens/register_page/register_page.dart';
 import 'package:chatty/screens/static_pages/splash_page.dart';
@@ -11,11 +12,14 @@ import 'package:mobx/mobx.dart';
 part 'router_store.g.dart';
 
 class RouterStore extends _RouterStore with _$RouterStore {
-  RouterStore({required AuthStore authStore}) : super(authStore: authStore);
+  RouterStore({required AuthStore authStore, required UserStore userStore})
+      : super(authStore: authStore, userStore: userStore);
 }
 
 abstract class _RouterStore with Store {
-  _RouterStore({required AuthStore authStore}) : _authStore = authStore {
+  _RouterStore({required AuthStore authStore, required UserStore userStore})
+      : _authStore = authStore,
+        _userStore = userStore {
     reaction<AuthState>((_) => _authStore.authState, (AuthState authState) {
       if (authState == AuthState.authenticated) {
         // Check if any route needs to be restored after login
@@ -23,7 +27,9 @@ abstract class _RouterStore with Store {
           setNewRoutePath(_restoreRoute!);
           _restoreRoute = null;
         } else {
-          _routerState = const RouterState.home();
+          if (!_routerState.isAuthorized) {
+            _routerState = const RouterState.home();
+          }
         }
       }
 
@@ -34,6 +40,7 @@ abstract class _RouterStore with Store {
   }
 
   final AuthStore _authStore;
+  final UserStore _userStore;
 
   RouterState? _restoreRoute;
 
@@ -54,12 +61,19 @@ abstract class _RouterStore with Store {
         if (_authStore.authState == AuthState.authenticated) ...<Page<dynamic>>[
           if (_routerState is Home)
             const _NoAnimationPage(child: HomePage(), key: ValueKey<String>('home-page')),
+          if (!_userStore.isProfileCompleted)
+            const _NoAnimationPage(
+              child: CompleteProfilePage(),
+              key: ValueKey<String>('complete-profile-page'),
+            ),
         ],
 
         // Exceptional stack
         if (_routerState is Unknown)
           const _NoAnimationPage(child: UnknownPage(), key: ValueKey<String>('unknown-page')),
-        if (_authStore.authState == AuthState.unknown)
+        if (_authStore.authState == AuthState.unknown ||
+            (_authStore.authState == AuthState.authenticated &&
+                _userStore.userDataState is Loading))
           const _NoAnimationPage(child: SplashPage(), key: ValueKey<String>('splash-page'))
       ];
 

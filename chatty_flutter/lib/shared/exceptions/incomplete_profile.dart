@@ -1,0 +1,1 @@
+class IncompleteProfileException implements Exception {}
