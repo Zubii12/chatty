@@ -107,5 +107,6 @@ ThemeData get appThemeDark {
       subtitle1: TextStyle(color: Palette.offWhite),
       subtitle2: TextStyle(color: Palette.offWhite),
     ),
+    dialogBackgroundColor: Palette.activeBlack,
   );
 }

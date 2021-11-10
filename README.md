@@ -30,7 +30,7 @@ A new Chat app project.
 ## Home page
 
 - [x] add bottom navigation bar
-- [ ] add contacts page
+- [x] add contacts page
 - [ ] add chats page
 - [ ] add more page
 

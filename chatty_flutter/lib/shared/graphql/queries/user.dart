@@ -1,9 +1,9 @@
 import 'package:graphql/client.dart';
 
-QueryOptions userQuery({required String phone}) {
+QueryOptions usersQuery({required String phone}) {
   return QueryOptions(
     document: gql(r'''
-query userQuery($phone: String!) {
+query usersQuery($phone: String!) {
   users(where: {phone: {_eq: $phone}}) {
     id
     name

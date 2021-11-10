@@ -192,6 +192,98 @@ mixin _$UserStore on _UserStore, Store {
     });
   }
 
+  final _$_contactsStateAtom = Atom(name: '_UserStore._contactsState');
+
+  StateModel<List<User>> get contactsState {
+    _$_contactsStateAtom.reportRead();
+    return super._contactsState;
+  }
+
+  @override
+  StateModel<List<User>> get _contactsState => contactsState;
+
+  @override
+  set _contactsState(StateModel<List<User>> value) {
+    _$_contactsStateAtom.reportWrite(value, super._contactsState, () {
+      super._contactsState = value;
+    });
+  }
+
+  final _$_contactsSearchKeywordAtom =
+      Atom(name: '_UserStore._contactsSearchKeyword');
+
+  String get contactsSearchKeyword {
+    _$_contactsSearchKeywordAtom.reportRead();
+    return super._contactsSearchKeyword;
+  }
+
+  @override
+  String get _contactsSearchKeyword => contactsSearchKeyword;
+
+  @override
+  set _contactsSearchKeyword(String value) {
+    _$_contactsSearchKeywordAtom
+        .reportWrite(value, super._contactsSearchKeyword, () {
+      super._contactsSearchKeyword = value;
+    });
+  }
+
+  final _$_searchContactsStateAtom =
+      Atom(name: '_UserStore._searchContactsState');
+
+  StateModel<List<User>> get searchContactsState {
+    _$_searchContactsStateAtom.reportRead();
+    return super._searchContactsState;
+  }
+
+  @override
+  StateModel<List<User>> get _searchContactsState => searchContactsState;
+
+  @override
+  set _searchContactsState(StateModel<List<User>> value) {
+    _$_searchContactsStateAtom.reportWrite(value, super._searchContactsState,
+        () {
+      super._searchContactsState = value;
+    });
+  }
+
+  final _$_addNewContactsSearchKeywordAtom =
+      Atom(name: '_UserStore._addNewContactsSearchKeyword');
+
+  String get addNewContactsSearchKeyword {
+    _$_addNewContactsSearchKeywordAtom.reportRead();
+    return super._addNewContactsSearchKeyword;
+  }
+
+  @override
+  String get _addNewContactsSearchKeyword => addNewContactsSearchKeyword;
+
+  @override
+  set _addNewContactsSearchKeyword(String value) {
+    _$_addNewContactsSearchKeywordAtom
+        .reportWrite(value, super._addNewContactsSearchKeyword, () {
+      super._addNewContactsSearchKeyword = value;
+    });
+  }
+
+  final _$_addNewContactStateAtom =
+      Atom(name: '_UserStore._addNewContactState');
+
+  StateModel<void> get addNewContactState {
+    _$_addNewContactStateAtom.reportRead();
+    return super._addNewContactState;
+  }
+
+  @override
+  StateModel<void> get _addNewContactState => addNewContactState;
+
+  @override
+  set _addNewContactState(StateModel<void> value) {
+    _$_addNewContactStateAtom.reportWrite(value, super._addNewContactState, () {
+      super._addNewContactState = value;
+    });
+  }
+
   final _$_fetchUserDataAsyncAction = AsyncAction('_UserStore._fetchUserData');
 
   @override
@@ -205,6 +297,52 @@ mixin _$UserStore on _UserStore, Store {
   Future<void> updateUserData({required String name, required String? photo}) {
     return _$updateUserDataAsyncAction
         .run(() => super.updateUserData(name: name, photo: photo));
+  }
+
+  final _$_fetchContactsAsyncAction = AsyncAction('_UserStore._fetchContacts');
+
+  @override
+  Future<void> _fetchContacts() {
+    return _$_fetchContactsAsyncAction.run(() => super._fetchContacts());
+  }
+
+  final _$searchContactsAsyncAction = AsyncAction('_UserStore.searchContacts');
+
+  @override
+  Future<void> searchContacts() {
+    return _$searchContactsAsyncAction.run(() => super.searchContacts());
+  }
+
+  final _$addNewContactAsyncAction = AsyncAction('_UserStore.addNewContact');
+
+  @override
+  Future<void> addNewContact({required int contactId}) {
+    return _$addNewContactAsyncAction
+        .run(() => super.addNewContact(contactId: contactId));
+  }
+
+  final _$_UserStoreActionController = ActionController(name: '_UserStore');
+
+  @override
+  void setContactsSearchKeyword(String newKeyword) {
+    final _$actionInfo = _$_UserStoreActionController.startAction(
+        name: '_UserStore.setContactsSearchKeyword');
+    try {
+      return super.setContactsSearchKeyword(newKeyword);
+    } finally {
+      _$_UserStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setAddNewContactsSearchKeyword(String newKeyword) {
+    final _$actionInfo = _$_UserStoreActionController.startAction(
+        name: '_UserStore.setAddNewContactsSearchKeyword');
+    try {
+      return super.setAddNewContactsSearchKeyword(newKeyword);
+    } finally {
+      _$_UserStoreActionController.endAction(_$actionInfo);
+    }
   }
 
   @override

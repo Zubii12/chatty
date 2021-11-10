@@ -25,7 +25,7 @@ abstract class _AuthStore with Store {
   @action
   Future<void> _loginWithStoredPhone() async {
     try {
-      final String? phone = await _authService.login().timeout(const Duration(seconds: 10));
+      final String? phone = await _authService.login().timeout(const Duration(seconds: 20));
 
       if (phone != null) {
         _authData = AuthData(phone: phone);
